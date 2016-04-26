@@ -2,6 +2,7 @@
 `include "uvm_macros.svh"
 import uvm_pkg::*;
 
+`include "zmk_transaction.sv"
 `include "zmk_driver.sv"
 module top_tb;
 

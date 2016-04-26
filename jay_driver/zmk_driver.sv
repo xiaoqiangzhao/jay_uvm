@@ -13,27 +13,58 @@ class zmk_driver extends uvm_driver;
    endfunction
 
    extern virtual task main_phase(uvm_phase phase);
+   extern virtual task drive_one_pkt(zmk_transaction tr);
 endclass
 
 
 
 task zmk_driver::main_phase(uvm_phase phase);
+   zmk_transaction tr;
    phase.raise_objection(this);
    `uvm_info("zmk_driver","main phase start",UVM_LOW);
-   v_zmk_if.write_select <=8'b0;
-   v_zmk_if.w_data <=32'b0;
-   `uvm_info("zmk_driver","wait for ipg_clk",UVM_LOW);
-   repeat(2) @(posedge v_zmk_if.ipg_clk);
-   `uvm_info("zmk_driver","get ipg_clk ",UVM_LOW);
+   `uvm_info("zmk_driver","Waiting for reset",UVM_LOW);
+   wait(v_zmk_if.soft_reset==1'b1 && v_zmk_if.reset==1'b1);
+   `uvm_info("zmk_driver","reset finished",UVM_LOW);
+   @(posedge v_zmk_if.ipg_clk);
+   for(int i=0;i<3;i++)
+   begin
+      tr = new("tr");
+      assert(tr.randomize());
+      drive_one_pkt(tr);
+   end
+   phase.drop_objection(this);
+endtask
+
+task zmk_driver::drive_one_pkt(zmk_transaction tr);
+   bit [255:0] tmp_key;
+   bit [31:0] data_q[$];
+   tmp_key = tr.zmk_key;
+   $display("tmp_key is %x",tmp_key);
    for(int i =0; i < 8; i++)
    begin
+   $display("tmp_key[31:0] is %x",tmp_key[31:0]);
+      data_q.push_back(tmp_key[31:0]);
+      /*for(int j=0;j<data_q.size();j++)*/
+      //begin
+         //$display("data_q[%d] is %x",j,data_q[j]);
+      /*end*/
+      tmp_key = tmp_key >> 32 ;
+   end
+   repeat(3) @(posedge v_zmk_if.ipg_clk);  // need to avoid competition  with main_phase
+   while(data_q.size() > 0)
+   begin
       @(posedge v_zmk_if.ipg_clk);
-      v_zmk_if.write_select <= 1<<i;
-      v_zmk_if.w_data <= $urandom_range(0,32'hffffffff);
-      `uvm_info("zmk_driver","write zmk", UVM_LOW);
+      $display("remaining %d words",data_q.size());
+      v_zmk_if.write_select =(1 << (data_q.size()-1)) ;
+      //for(int j=0;j<data_q.size();j++)
+      //begin
+         //$display("data_q[%d] is %x",j,data_q[j]);
+      //end
+
+      v_zmk_if.w_data =data_q.pop_back();
       $display("write_select: %b  w_data: %x",v_zmk_if.write_select,v_zmk_if.w_data);
    end
-   @(posedge v_zmk_if.ipg_clk);
-   v_zmk_if.write_select <= 8'b0;
-   phase.drop_objection(this);
+   //@(posedge v_zmk_if.ipg_clk);
+   //v_zmk_if.write_select <=8'b0;
+
 endtask
