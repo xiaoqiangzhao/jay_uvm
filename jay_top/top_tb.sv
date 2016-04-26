@@ -4,6 +4,7 @@ import uvm_pkg::*;
 
 `include "zmk_transaction.sv"
 `include "zmk_driver.sv"
+`include "zmk_env.sv"
 module top_tb;
 
 
@@ -27,11 +28,11 @@ snvs_lp_zmk dut_snvs_lp_zmk(
 );
 
 initial begin
-   run_test("zmk_driver");
+   run_test("zmk_env");
 end
 
 initial begin
-   uvm_config_db#(virtual zmk_if)::set(null,"uvm_test_top","vif",input_if);
+   uvm_config_db#(virtual zmk_if)::set(null,"uvm_test_top.drv","vif",input_if);
 end
 
 initial begin
