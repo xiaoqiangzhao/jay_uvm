@@ -4,6 +4,7 @@ import uvm_pkg::*;
 
 `include "zmk_transaction.sv"
 `include "zmk_driver.sv"
+`include "zmk_monitor.sv"
 `include "zmk_env.sv"
 module top_tb;
 
@@ -33,6 +34,7 @@ end
 
 initial begin
    uvm_config_db#(virtual zmk_if)::set(null,"uvm_test_top.drv","vif",input_if);
+   uvm_config_db#(virtual zmk_if)::set(null,"uvm_test_top.out_monitor","vif",output_if);
 end
 
 initial begin
@@ -42,11 +44,11 @@ initial begin
    end
 end
 initial begin
-   reset =0;
-   soft_reset =0;
-   repeat(2) @(posedge ipg_clk);
    reset =1;
-   repeat(2) @(posedge ipg_clk);
    soft_reset =1;
+   repeat(2) @(posedge ipg_clk);
+   reset =0;
+   repeat(2) @(posedge ipg_clk);
+   soft_reset =0;
 end
 endmodule
