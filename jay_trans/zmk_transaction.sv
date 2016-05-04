@@ -11,4 +11,8 @@ class zmk_transaction extends uvm_sequence_item ;
    function new(string name="zmk_transaction");
       super.new(name);
    endfunction
+
+   function void my_print();
+      $display("print zmk_transaction: %x",zmk_key);
+   endfunction
 endclass

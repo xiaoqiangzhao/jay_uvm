@@ -5,6 +5,9 @@ import uvm_pkg::*;
 `include "zmk_transaction.sv"
 `include "zmk_driver.sv"
 `include "zmk_monitor.sv"
+`include "zmk_input_monitor.sv"
+`include "zmk_agent.sv"
+`include "zmk_ref_model.sv"
 `include "zmk_env.sv"
 module top_tb;
 
@@ -33,7 +36,8 @@ initial begin
 end
 
 initial begin
-   uvm_config_db#(virtual zmk_if)::set(null,"uvm_test_top.drv","vif",input_if);
+   uvm_config_db#(virtual zmk_if)::set(null,"uvm_test_top.i_agt.drv","vif",input_if);
+   uvm_config_db#(virtual zmk_if)::set(null,"uvm_test_top.i_agt.mon","vif",input_if);
    uvm_config_db#(virtual zmk_if)::set(null,"uvm_test_top.out_monitor","vif",output_if);
 end
 

@@ -6,5 +6,8 @@ $WORK_HOME/jay_dut/snvs_lp_zmk_ff.v
 $WORK_HOME/jay_dut/snvs_lp_zmk.v
 +incdir+$WORK_HOME/jay_trans
 +incdir+$WORK_HOME/jay_env
++incdir+$WORK_HOME/jay_monitor
++incdir+$WORK_HOME/jay_reference
++incdir+$WORK_HOME/jay_agent
 $WORK_HOME/jay_if/zmk_if.sv
 $WORK_HOME/jay_top/top_tb.sv

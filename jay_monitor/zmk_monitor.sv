@@ -1,5 +1,6 @@
 class zmk_monitor extends uvm_monitor;
    virtual zmk_if v_zmk_if;
+   uvm_analysis_port #(zmk_transaction) ap;
    `uvm_component_utils(zmk_monitor);
    function new(string name = "zmk_monitor", uvm_component parent = null);
       super.new(name,parent);
@@ -7,6 +8,7 @@ class zmk_monitor extends uvm_monitor;
 
    virtual function void build_phase(uvm_phase phase);
       super.build_phase(phase);
+      ap = new ("ap",this);
       if(!uvm_config_db#(virtual zmk_if)::get(this,"","vif",v_zmk_if))
          `uvm_fatal("zmk_monitor","virtual interface must be set for zmk_monitor");
    endfunction
@@ -22,6 +24,7 @@ task zmk_monitor::main_phase(uvm_phase phase);
    begin
       tr = new("tr");
       collect_one_pkt(tr);
+      ap.write(tr);
    end
 endtask
 

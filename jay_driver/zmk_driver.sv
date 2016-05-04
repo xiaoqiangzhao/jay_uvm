@@ -32,6 +32,7 @@ task zmk_driver::main_phase(uvm_phase phase);
       assert(tr.randomize());
       drive_one_pkt(tr);
    end
+   repeat(2) @(posedge v_zmk_if.ipg_clk);
    phase.drop_objection(this);
 endtask
 
@@ -39,10 +40,10 @@ task zmk_driver::drive_one_pkt(zmk_transaction tr);
    bit [255:0] tmp_key;
    bit [31:0] data_q[$];
    tmp_key = tr.zmk_key;
-   $display("tmp_key is %x",tmp_key);
+   //$display("tmp_key is %x",tmp_key);
    for(int i =0; i < 8; i++)
    begin
-   $display("tmp_key[31:0] is %x",tmp_key[31:0]);
+   //$display("tmp_key[31:0] is %x",tmp_key[31:0]);
       data_q.push_back(tmp_key[31:0]);
       /*for(int j=0;j<data_q.size();j++)*/
       //begin
@@ -54,7 +55,7 @@ task zmk_driver::drive_one_pkt(zmk_transaction tr);
    while(data_q.size() > 0)
    begin
       @(posedge v_zmk_if.ipg_clk);
-      $display("remaining %d words",data_q.size());
+      //$display("remaining %d words",data_q.size());
       v_zmk_if.write_select =(1 << (data_q.size()-1)) ;
       //for(int j=0;j<data_q.size();j++)
       //begin
@@ -64,7 +65,7 @@ task zmk_driver::drive_one_pkt(zmk_transaction tr);
       v_zmk_if.w_data =data_q.pop_back();
       $display("write_select: %b  w_data: %x",v_zmk_if.write_select,v_zmk_if.w_data);
    end
-   //@(posedge v_zmk_if.ipg_clk);
-   //v_zmk_if.write_select <=8'b0;
+   @(posedge v_zmk_if.ipg_clk);
+   v_zmk_if.write_select <=8'b0;
 
 endtask
