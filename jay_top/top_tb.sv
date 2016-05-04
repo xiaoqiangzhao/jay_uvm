@@ -8,6 +8,7 @@ import uvm_pkg::*;
 `include "zmk_input_monitor.sv"
 `include "zmk_agent.sv"
 `include "zmk_ref_model.sv"
+`include "zmk_scoreboard.sv"
 `include "zmk_env.sv"
 module top_tb;
 

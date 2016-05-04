@@ -30,6 +30,6 @@ endtask
 
 task zmk_monitor::collect_one_pkt(zmk_transaction tr);
    @(posedge v_zmk_if.ipg_clk);
-   tr.zmk_key <= v_zmk_if.reg_data; 
+   tr.zmk_key = v_zmk_if.reg_data; 
    $display("collect zmk_key %x",v_zmk_if.reg_data);
 endtask

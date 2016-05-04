@@ -15,4 +15,10 @@ class zmk_transaction extends uvm_sequence_item ;
    function void my_print();
       $display("print zmk_transaction: %x",zmk_key);
    endfunction
+
+   function bit my_compare(zmk_transaction tr);
+      if(tr == null)
+         `uvm_fatal("zmk_transaction","tr is null!!!");
+      return (zmk_key==tr.zmk_key);
+   endfunction
 endclass
