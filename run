@@ -1,4 +1,9 @@
 #!/bin/csh
+if($1 == "") then
+   set test_name = "base_test"
+else
+   set test_name = $1
+endif
 if ( $SIM_TOOL == "QUESTA" ) then
 vlib work
 vlog -f filelist.f
@@ -7,7 +12,7 @@ endif
 
 if ( $SIM_TOOL == "VCS" ) then
 vcs -sverilog $UVM_HOME/src/dpi/uvm_dpi.cc -CFLAGS -DVCS -timescale=1ns/1ps -f filelist.f  +vcs+dumpvars+test.vcd
-./simv 
+./simv +UVM_TESTNAME=$test_name
 endif
 
 if ( $SIM_TOOL == "NCSIM" ) then
