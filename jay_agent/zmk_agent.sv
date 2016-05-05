@@ -19,7 +19,6 @@ function void zmk_agent::build_phase(uvm_phase phase);
    begin
       drv = zmk_driver::type_id::create("drv",this);
       sqr = zmk_sequencer::type_id::create("sqr",this);
-      uvm_config_db#(uvm_object_wrapper)::set(this,"sqr.main_phase","default_sequence",zmk_sequence_0::type_id::get());
    end
    mon = zmk_input_monitor::type_id::create("mon",this);
 endfunction

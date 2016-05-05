@@ -12,6 +12,8 @@ import uvm_pkg::*;
 `include "zmk_ref_model.sv"
 `include "zmk_scoreboard.sv"
 `include "zmk_env.sv"
+`include "base_test.sv"
+`include "base_test1.sv"
 module top_tb;
 
 
@@ -35,13 +37,13 @@ snvs_lp_zmk dut_snvs_lp_zmk(
 );
 
 initial begin
-   run_test("zmk_env");
+   run_test();
 end
 
 initial begin
-   uvm_config_db#(virtual zmk_if)::set(null,"uvm_test_top.i_agt.drv","vif",input_if);
-   uvm_config_db#(virtual zmk_if)::set(null,"uvm_test_top.i_agt.mon","vif",input_if);
-   uvm_config_db#(virtual zmk_if)::set(null,"uvm_test_top.out_monitor","vif",output_if);
+   uvm_config_db#(virtual zmk_if)::set(null,"uvm_test_top.env.i_agt.drv","vif",input_if);
+   uvm_config_db#(virtual zmk_if)::set(null,"uvm_test_top.env.i_agt.mon","vif",input_if);
+   uvm_config_db#(virtual zmk_if)::set(null,"uvm_test_top.env.out_monitor","vif",output_if);
 end
 
 initial begin

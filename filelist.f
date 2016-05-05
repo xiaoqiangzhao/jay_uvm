@@ -11,5 +11,6 @@ $WORK_HOME/jay_dut/snvs_lp_zmk.v
 +incdir+$WORK_HOME/jay_agent
 +incdir+$WORK_HOME/jay_scoreboard
 +incdir+$WORK_HOME/jay_sequencer
++incdir+$WORK_HOME/jay_test
 $WORK_HOME/jay_if/zmk_if.sv
 $WORK_HOME/jay_top/top_tb.sv
