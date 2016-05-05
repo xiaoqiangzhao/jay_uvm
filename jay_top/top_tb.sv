@@ -5,6 +5,8 @@ import uvm_pkg::*;
 `include "zmk_transaction.sv"
 `include "zmk_driver.sv"
 `include "zmk_monitor.sv"
+`include "zmk_sequencer.sv"
+`include "zmk_sequence_0.sv"
 `include "zmk_input_monitor.sv"
 `include "zmk_agent.sv"
 `include "zmk_ref_model.sv"

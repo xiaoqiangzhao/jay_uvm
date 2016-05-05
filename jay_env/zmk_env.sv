@@ -38,5 +38,13 @@ class zmk_env extends uvm_env;
       scoreboard.exp_port.connect(mdl_sco_fifo.blocking_get_export);
    endfunction
 
+   task main_phase(uvm_phase phase);
+      zmk_sequence_0 seq_0;
+      phase.raise_objection(this);
+      seq_0 = zmk_sequence_0::type_id::create("seq_0");
+      seq_0.start(i_agt.sqr);
+      phase.drop_objection(this);
+   endtask
+
    `uvm_component_utils(zmk_env);
 endclass

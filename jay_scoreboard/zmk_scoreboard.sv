@@ -32,8 +32,8 @@ endclass
             if(act_port_q.size())
             begin
                tmp_tr = act_port_q.pop_back();
-               //tmp_tr.my_print();
-               if(exp_tr.my_compare(tmp_tr))
+               //tmp_tr.print();
+               if(exp_tr.compare(tmp_tr))
                begin
                   `uvm_info("zmk_scoreboard","Compare Successfully",UVM_LOW);
                end
@@ -41,16 +41,16 @@ endclass
                begin
                   `uvm_error("zmk_scoreboard","Compare Failed");
                   $display("the expect pkt:");
-                  exp_tr.my_print();
+                  exp_tr.print();
                   $display("the actural pkt:");
-                  tmp_tr.my_print();
+                  tmp_tr.print();
                end
             end
             else
             begin
                `uvm_error("my_scoreboard","Actural Que is Empty");
                $display("Expeted Pkt:");
-               exp_tr.my_print();
+               exp_tr.print();
             end
          end
 

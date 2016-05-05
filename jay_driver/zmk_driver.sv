@@ -1,4 +1,4 @@
-class zmk_driver extends uvm_driver;
+class zmk_driver extends uvm_driver #(zmk_transaction);
    virtual zmk_if v_zmk_if;
    `uvm_component_utils(zmk_driver);
    function new(string name = "zmk_driver", uvm_component parent = null);
@@ -19,21 +19,18 @@ endclass
 
 
 task zmk_driver::main_phase(uvm_phase phase);
-   zmk_transaction tr;
-   phase.raise_objection(this);
    `uvm_info("zmk_driver","main phase start",UVM_LOW);
    `uvm_info("zmk_driver","Waiting for reset",UVM_LOW);
    wait(v_zmk_if.soft_reset==1'b1 && v_zmk_if.reset==1'b1);
    `uvm_info("zmk_driver","reset finished",UVM_LOW);
    @(posedge v_zmk_if.ipg_clk);
-   for(int i=0;i<3;i++)
+   while(1)
    begin
-      tr = new("tr");
-      assert(tr.randomize());
-      drive_one_pkt(tr);
+      req = new("req");
+      seq_item_port.get_next_item(req);
+      drive_one_pkt(req);
+      seq_item_port.item_done();
    end
-   repeat(2) @(posedge v_zmk_if.ipg_clk);
-   phase.drop_objection(this);
 endtask
 
 task zmk_driver::drive_one_pkt(zmk_transaction tr);
@@ -41,16 +38,17 @@ task zmk_driver::drive_one_pkt(zmk_transaction tr);
    bit [31:0] data_q[$];
    tmp_key = tr.zmk_key;
    //$display("tmp_key is %x",tmp_key);
-   for(int i =0; i < 8; i++)
-   begin
-   //$display("tmp_key[31:0] is %x",tmp_key[31:0]);
-      data_q.push_back(tmp_key[31:0]);
-      /*for(int j=0;j<data_q.size();j++)*/
-      //begin
-         //$display("data_q[%d] is %x",j,data_q[j]);
-      /*end*/
-      tmp_key = tmp_key >> 32 ;
-   end
+   data_q = {<<32{tmp_key}};
+   //for(int i =0; i < 8; i++)
+   //begin
+   ////$display("tmp_key[31:0] is %x",tmp_key[31:0]);
+      //data_q.push_back(tmp_key[31:0]);
+      //[>for(int j=0;j<data_q.size();j++)<]
+      ////begin
+         ////$display("data_q[%d] is %x",j,data_q[j]);
+      //[>end<]
+      //tmp_key = tmp_key >> 32 ;
+   //end
    repeat(3) @(posedge v_zmk_if.ipg_clk);  // need to avoid competition  with main_phase
    while(data_q.size() > 0)
    begin

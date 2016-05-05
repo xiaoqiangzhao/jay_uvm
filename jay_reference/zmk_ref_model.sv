@@ -23,7 +23,7 @@ task zmk_ref_model::main_phase(uvm_phase phase);
    begin
       port.get(tr);
       `uvm_info("zmk_ref_model","get one transaction",UVM_LOW);
-      tr.my_print();
+      tr.print();
       ap.write(tr);
    end
 endtask
