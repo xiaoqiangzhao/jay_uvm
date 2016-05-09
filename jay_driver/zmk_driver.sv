@@ -12,6 +12,17 @@ class zmk_driver extends uvm_driver #(zmk_transaction);
          `uvm_fatal("zmk_driver","virtual interface must be set for zmk_driver");
    endfunction
 
+   virtual task reset_phase(uvm_phase phase);
+      phase.raise_objection(this);
+      `uvm_info("zmk_driver","reset phase",UVM_LOW);
+      `uvm_info("zmk_driver","Waiting for reset",UVM_LOW);
+      while(v_zmk_if.soft_reset==1'b1 || v_zmk_if.reset==1'b1) begin
+         @(posedge v_zmk_if.ipg_clk);
+      end
+      `uvm_info("zmk_driver","reset finished",UVM_LOW);
+      phase.drop_objection(this);
+   endtask
+
    extern virtual task main_phase(uvm_phase phase);
    extern virtual task drive_one_pkt(zmk_transaction tr);
 endclass
@@ -20,10 +31,9 @@ endclass
 
 task zmk_driver::main_phase(uvm_phase phase);
    `uvm_info("zmk_driver","main phase start",UVM_LOW);
-   `uvm_info("zmk_driver","Waiting for reset",UVM_LOW);
-   wait(v_zmk_if.soft_reset==1'b1 && v_zmk_if.reset==1'b1);
-   `uvm_info("zmk_driver","reset finished",UVM_LOW);
-   @(posedge v_zmk_if.ipg_clk);
+   //wait(v_zmk_if.soft_reset==1'b1 && v_zmk_if.reset==1'b1);
+   //@(posedge v_zmk_if.ipg_clk);
+   fork
    while(1)
    begin
       req = new("req");
@@ -31,6 +41,11 @@ task zmk_driver::main_phase(uvm_phase phase);
       drive_one_pkt(req);
       seq_item_port.item_done();
    end
+   begin
+      @(posedge v_zmk_if.soft_reset, posedge v_zmk_if.reset);
+      phase.jump(uvm_reset_phase::get());
+   end
+   join
 endtask
 
 task zmk_driver::drive_one_pkt(zmk_transaction tr);

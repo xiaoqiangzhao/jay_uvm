@@ -27,6 +27,9 @@ class base_test1 extends uvm_test;
 
    extern virtual function void build_phase(uvm_phase phase);
    extern virtual function void report_phase(uvm_phase phase);
+   virtual function void connect_phase(uvm_phase phase);
+      env.i_agt.drv.set_report_severity_override(UVM_INFO,UVM_WARNING);
+   endfunction
       `uvm_component_utils(base_test1);
 endclass
 
@@ -34,6 +37,7 @@ function void base_test1::build_phase(uvm_phase phase);
    super.build_phase(phase);
    env = zmk_env::type_id::create("env",this);
    uvm_config_db#(uvm_object_wrapper)::set(this,"env.i_agt.sqr.main_phase","default_sequence",zmk_sequence_1::type_id::get());
+   set_report_max_quit_count(2);
 endfunction
 
 function void base_test1::report_phase(uvm_phase phase);

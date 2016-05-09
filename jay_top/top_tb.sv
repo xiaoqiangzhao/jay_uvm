@@ -14,6 +14,7 @@ import uvm_pkg::*;
 `include "zmk_env.sv"
 `include "base_test.sv"
 `include "base_test1.sv"
+//`include "my_test1.sv"
 module top_tb;
 
 
@@ -59,5 +60,13 @@ initial begin
    reset =0;
    repeat(2) @(posedge ipg_clk);
    soft_reset =0;
+   //#5000;
+   //soft_reset =1;
+   //#400;
+   //soft_reset =0;
+   //#5000;
+   //reset =1;
+   //#400;
+   //reset =0;
 end
 endmodule
