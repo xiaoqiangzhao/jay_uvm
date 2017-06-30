@@ -1,0 +1,543 @@
+225      
+0 uvm_macros.svh
+0 macros/uvm_version_defines.svh
+0 macros/uvm_message_defines.svh
+0 macros/uvm_phase_defines.svh
+0 macros/uvm_object_defines.svh
+0 macros/uvm_printer_defines.svh
+0 macros/uvm_tlm_defines.svh
+0 tlm1/uvm_tlm_imps.svh
+0 macros/uvm_sequence_defines.svh
+0 macros/uvm_callback_defines.svh
+0 macros/uvm_reg_defines.svh
+0 macros/uvm_deprecated_defines.svh
+0 dpi/uvm_dpi.svh
+0 dpi/uvm_hdl.svh
+0 dpi/uvm_svcmd_dpi.svh
+0 dpi/uvm_regex.svh
+0 base/uvm_base.svh
+0 base/uvm_version.svh
+0 base/uvm_object_globals.svh
+0 base/uvm_misc.svh
+0 base/uvm_object.svh
+0 base/uvm_pool.svh
+0 base/uvm_queue.svh
+0 base/uvm_factory.svh
+0 base/uvm_registry.svh
+0 base/uvm_spell_chkr.svh
+0 base/uvm_resource.svh
+0 deprecated/uvm_resource_converter.svh
+0 base/uvm_resource_specializations.svh
+0 base/uvm_resource_db.svh
+0 base/uvm_config_db.svh
+0 base/uvm_printer.svh
+0 base/uvm_comparer.svh
+0 base/uvm_packer.svh
+0 base/uvm_recorder.svh
+0 base/uvm_event_callback.svh
+0 base/uvm_event.svh
+0 base/uvm_barrier.svh
+0 base/uvm_callback.svh
+0 uvm_macros.svh
+0 base/uvm_report_catcher.svh
+0 base/uvm_report_server.svh
+0 base/uvm_report_handler.svh
+0 base/uvm_report_object.svh
+0 base/uvm_transaction.svh
+0 base/uvm_phase.svh
+0 base/uvm_domain.svh
+0 base/uvm_bottomup_phase.svh
+0 base/uvm_topdown_phase.svh
+0 base/uvm_task_phase.svh
+0 base/uvm_common_phases.svh
+0 base/uvm_runtime_phases.svh
+0 base/uvm_component.svh
+0 base/uvm_root.svh
+0 base/uvm_objection.svh
+0 base/uvm_heartbeat.svh
+0 base/uvm_globals.svh
+0 base/uvm_cmdline_processor.svh
+0 tlm1/uvm_tlm.svh
+0 tlm1/uvm_tlm_ifs.svh
+0 tlm1/uvm_sqr_ifs.svh
+0 base/uvm_port_base.svh
+0 tlm1/uvm_tlm_imps.svh
+0 tlm1/uvm_imps.svh
+0 tlm1/uvm_ports.svh
+0 tlm1/uvm_exports.svh
+0 tlm1/uvm_analysis_port.svh
+0 tlm1/uvm_tlm_fifo_base.svh
+0 tlm1/uvm_tlm_fifos.svh
+0 tlm1/uvm_tlm_req_rsp.svh
+0 tlm1/uvm_sqr_connections.svh
+0 comps/uvm_comps.svh
+0 comps/uvm_pair.svh
+0 comps/uvm_policies.svh
+0 comps/uvm_in_order_comparator.svh
+0 comps/uvm_algorithmic_comparator.svh
+0 comps/uvm_random_stimulus.svh
+0 comps/uvm_subscriber.svh
+0 comps/uvm_monitor.svh
+0 comps/uvm_driver.svh
+0 comps/uvm_push_driver.svh
+0 comps/uvm_scoreboard.svh
+0 comps/uvm_agent.svh
+0 comps/uvm_env.svh
+0 comps/uvm_test.svh
+0 seq/uvm_seq.svh
+0 seq/uvm_sequence_item.svh
+0 seq/uvm_sequencer_base.svh
+0 seq/uvm_sequencer_analysis_fifo.svh
+0 seq/uvm_sequencer_param_base.svh
+0 seq/uvm_sequencer.svh
+0 seq/uvm_push_sequencer.svh
+0 seq/uvm_sequence_base.svh
+0 seq/uvm_sequence.svh
+0 seq/uvm_sequence_library.svh
+0 seq/uvm_sequence_builtin.svh
+0 tlm2/uvm_tlm2.svh
+0 tlm2/uvm_tlm2_defines.svh
+0 tlm2/uvm_tlm2_time.svh
+0 tlm2/uvm_tlm2_generic_payload.svh
+0 tlm2/uvm_tlm2_ifs.svh
+0 tlm2/uvm_tlm2_imps.svh
+0 tlm2/uvm_tlm2_ports.svh
+0 tlm2/uvm_tlm2_exports.svh
+0 tlm2/uvm_tlm2_sockets_base.svh
+0 tlm2/uvm_tlm2_sockets.svh
+0 reg/uvm_reg_model.svh
+0 reg/uvm_reg_item.svh
+0 reg/uvm_reg_adapter.svh
+0 reg/uvm_reg_predictor.svh
+0 reg/uvm_reg_sequence.svh
+0 reg/uvm_reg_cbs.svh
+0 reg/uvm_reg_backdoor.svh
+0 reg/uvm_reg_field.svh
+0 reg/uvm_vreg_field.svh
+0 reg/uvm_reg.svh
+0 reg/uvm_reg_indirect.svh
+0 reg/uvm_reg_fifo.svh
+0 reg/uvm_reg_file.svh
+0 reg/uvm_mem_mam.svh
+0 reg/uvm_vreg.svh
+0 reg/uvm_mem.svh
+0 reg/uvm_reg_map.svh
+0 reg/uvm_reg_block.svh
+0 reg/sequences/uvm_reg_hw_reset_seq.svh
+0 reg/sequences/uvm_reg_bit_bash_seq.svh
+0 reg/sequences/uvm_mem_walk_seq.svh
+0 reg/sequences/uvm_mem_access_seq.svh
+0 reg/sequences/uvm_reg_access_seq.svh
+0 reg/sequences/uvm_reg_mem_shared_access_seq.svh
+0 reg/sequences/uvm_reg_mem_built_in_seq.svh
+0 reg/sequences/uvm_reg_mem_hdl_paths_seq.svh
+0 snvs_params.vh
+0 /home/b51816/uvm/uvm-1.1d/src/snvs_params.vh
+0 /home/b51816/my_git/repository/jay_uvm/jay_driver/snvs_params.vh
+0 uvm_macros.svh
+0 zmk_transaction.sv
+0 /home/b51816/uvm/uvm-1.1d/src/zmk_transaction.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_driver/zmk_transaction.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_dut/zmk_transaction.sv
+0 zmk_driver.sv
+0 /home/b51816/uvm/uvm-1.1d/src/zmk_driver.sv
+0 zmk_monitor.sv
+0 /home/b51816/uvm/uvm-1.1d/src/zmk_monitor.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_driver/zmk_monitor.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_dut/zmk_monitor.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_trans/zmk_monitor.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_env/zmk_monitor.sv
+0 zmk_sequencer.sv
+0 /home/b51816/uvm/uvm-1.1d/src/zmk_sequencer.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_driver/zmk_sequencer.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_dut/zmk_sequencer.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_trans/zmk_sequencer.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_env/zmk_sequencer.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_monitor/zmk_sequencer.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_reference/zmk_sequencer.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_agent/zmk_sequencer.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_scoreboard/zmk_sequencer.sv
+0 zmk_sequence_0.sv
+0 /home/b51816/uvm/uvm-1.1d/src/zmk_sequence_0.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_driver/zmk_sequence_0.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_dut/zmk_sequence_0.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_trans/zmk_sequence_0.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_env/zmk_sequence_0.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_monitor/zmk_sequence_0.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_reference/zmk_sequence_0.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_agent/zmk_sequence_0.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_scoreboard/zmk_sequence_0.sv
+0 zmk_input_monitor.sv
+0 /home/b51816/uvm/uvm-1.1d/src/zmk_input_monitor.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_driver/zmk_input_monitor.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_dut/zmk_input_monitor.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_trans/zmk_input_monitor.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_env/zmk_input_monitor.sv
+0 zmk_agent.sv
+0 /home/b51816/uvm/uvm-1.1d/src/zmk_agent.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_driver/zmk_agent.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_dut/zmk_agent.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_trans/zmk_agent.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_env/zmk_agent.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_monitor/zmk_agent.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_reference/zmk_agent.sv
+0 zmk_ref_model.sv
+0 /home/b51816/uvm/uvm-1.1d/src/zmk_ref_model.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_driver/zmk_ref_model.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_dut/zmk_ref_model.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_trans/zmk_ref_model.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_env/zmk_ref_model.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_monitor/zmk_ref_model.sv
+0 zmk_scoreboard.sv
+0 /home/b51816/uvm/uvm-1.1d/src/zmk_scoreboard.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_driver/zmk_scoreboard.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_dut/zmk_scoreboard.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_trans/zmk_scoreboard.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_env/zmk_scoreboard.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_monitor/zmk_scoreboard.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_reference/zmk_scoreboard.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_agent/zmk_scoreboard.sv
+0 zmk_env.sv
+0 /home/b51816/uvm/uvm-1.1d/src/zmk_env.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_driver/zmk_env.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_dut/zmk_env.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_trans/zmk_env.sv
+0 base_test.sv
+0 /home/b51816/uvm/uvm-1.1d/src/base_test.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_driver/base_test.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_dut/base_test.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_trans/base_test.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_env/base_test.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_monitor/base_test.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_reference/base_test.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_agent/base_test.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_scoreboard/base_test.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_sequencer/base_test.sv
+0 base_test1.sv
+0 /home/b51816/uvm/uvm-1.1d/src/base_test1.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_driver/base_test1.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_dut/base_test1.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_trans/base_test1.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_env/base_test1.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_monitor/base_test1.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_reference/base_test1.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_agent/base_test1.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_scoreboard/base_test1.sv
+0 /home/b51816/my_git/repository/jay_uvm/jay_sequencer/base_test1.sv
+22
++vcs+dumpvars+test.vcd
+-Mamsrun=
+-Masflags=--32
+-Mcc=gcc
+-Mcfl= -pipe -m32 -DVCS -O -I/run/pkg/synopsys-vcs-/E-2011.03-3/include
+-Mcmodrun=
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=/home/b51816/uvm/uvm-1.1d/src/dpi/uvm_dpi.cc
+-Mldflags=-melf_i386 -m32
+-Mobjects= /run/pkg/synopsys-vcs-/E-2011.03-3/linux/lib/libvirsim.so /run/pkg/synopsys-vcs-/E-2011.03-3/linux/lib/librterrorinf.so /run/pkg/synopsys-vcs-/E-2011.03-3/linux/lib/libsnpsmalloc.so
+-Mout=simv
+-Msaverestoreobj=/run/pkg/synopsys-vcs-/E-2011.03-3/linux/lib/vcs_save_restore_new.o
+-Msyslibs=/run/pkg/synopsys-vcs-/E-2011.03-3/linux/lib/ctype-stubs_32.a -ldl
+-Mvcsaceobjs=
+-cm_xmldb
+-f filelist.f
+-gen_obj
+-sverilog
+-timescale=1ns/1ps
+/run/pkg/synopsys-vcs-/E-2011.03-3/linux/bin/vcs1
+135
+workarea=/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8
+tarmac_trace_on=1
+orig_dir=/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8
+mmdc_top=mmdc_top_64x32
+cedar_VERSION=/pkg/fs-cedar-/0.4.5-p1
+_SUE_=1
+XDG_CONFIG_DIRS=/etc/kde/xdg:/etc/xdg
+XAUTHORITY=/home/b51816/.Xauthority
+XAPPLRESDIR=/home/b51816/app-defaults
+WORK_HOME=/home/b51816/my_git/repository/jay_uvm
+V_RITA=sync://sync-19214:19214/Projects/imx_rita
+V_RIGEL=sync://sync-15030:15030/Projects/imx_rigel
+V_PELE=sync://sync-15114:15114/Projects/imx_pele
+V_MEM=sync://sync-15044:15044/Projects/memip_c40lp/instances
+V_MEGREZ=sync://sync-15114:15114/Projects/imx_megrez
+V_IMX6ULL=sync://sync-14806:14806/Projects/imx_6ull
+V_IMX6UL=sync://sync-15114:15114/Projects/imx_6ul
+V_IMX6SLL=sync://sync-15030:15030/Projects/imx_6sll
+V_CODEX=sync://sync-15030:15030/Projects/imx_codex
+V_ARIK=sync://sync-19234:19234/Projects/imx_arik
+VMR_MODE_FLAG=32
+VERA_HOME=/pkg/synopsys-vera-/D-2009.12/i686-linux
+VENDOR=unknown
+VCS_HOME=/run/pkg/synopsys-vcs-/E-2011.03-3
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux
+VCS_AMD_PURE32=1
+V=sync://sync-14806:14806/Projects/imx_6ull
+UVM_HOME=/home/b51816/uvm/uvm-1.1d
+UNAME=/bin/uname
+TOP_BLOCK=/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8/imx6sll
+TOOL_HOME=/run/pkg/synopsys-vcs-/E-2011.03-3/linux
+TEXINPUTS=.:/usr/lib
+ST_VERIF_ROOT=/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8/verif
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+SPECMAN_WEB_BROWSER=firefox
+SPECMAN_PATH=/run/pkg/cadence-vipcat-/11.30.019_ovm/packages
+SOC_WORK=/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8/project_settings/workspace.md
+SOC_DATA=/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8/project_settings/soc_data
+SNPSLMD_LICENSE_FILE=26585@curl-a:26585@curl-y:26585@curl-b:26585@curl-x:/run/pkg/synopsys-vcs-/E-2011.03-3/flexlm//license.dat
+SITE=ZIN33
+SIM_ULL=/proj/imx6ull_nobk/b51816
+SIM_UL=/proj/imx6ul_nobk/b51816
+SIM_TOOL=VCS
+SIM_INPUT=/proj/ult1_nobk/b51816
+SESSION_MANAGER=local/lvd5754:/tmp/.ICE-unix/30876
+SC_SIGNAL_WRITE_CHECK=DISABLE
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+REMOTEHOST=10.232.34.244
+QTLIB=/usr/lib64/qt-3.3/lib
+QTINC=/usr/lib64/qt-3.3/include
+QTDIR=/usr/lib64/qt-3.3
+PROJECT_DIR=/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8/project_settings
+PROJECT=imx6sll
+PIWORKSPACE=/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8
+PIRC=/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8/setup
+PERL_BIN=/home/b51816/localperl/bin/perl
+PERLBREW_VERSION=0.73
+PERLBREW_ROOT=/home/b51816/perl5/perlbrew
+PERLBREW_PERL=perl-5.23.1
+PERLBREW_PATH=/home/b51816/perl5/perlbrew/bin:/home/b51816/perl5/perlbrew/perls/perl-5.23.1/bin
+PERLBREW_MANPATH=/home/b51816/perl5/perlbrew/perls/perl-5.23.1/man
+PERLBREW_HOME=/home/b51816/.perlbrew
+PERLBREW_CSHRC_VERSION=0.73
+PATH_WITHOUT_PERLBREW=/site/lsf/8.0/9.1/linux2.6-glibc2.3-x86_64/etc:/site/lsf/8.0/9.1/linux2.6-glibc2.3-x86_64/bin:/usr/lib64/qt-3.3/bin:/usr/kerberos/bin:/usr/fsl/bin:/usr/share/centrifydc/bin:.:/run//proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8/setup/bin:/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8/setup:/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8/verif/tool/bin:/home/b51816/localperl/bin:/home/b51816:/home/b51816/bin:/usr/fsl/bin:/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin:/pkg/fs-foundation-/dynamic/bin/:/run/pkg/foundation-/frame/bin:/_TOOLS_/arch/bin:/_TOOLS_/wrap/bin:/usr/sbin
+OVA_UUM=0
+OSTYPE=linux
+OBJDUMPFLAGS=-hlDS
+OBJCOPYFLAGS=--output-target=verilog --strip-all
+NOVAS_LIBS=ts40npk_9t
+NOVAS_LIBPATHS=/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8/project_settings/tool_data/debussy
+NOVAS_IDLE_LICENSE_CHECKBACK=-20
+NOVAS_FSDB_ENV_MAX_GLITCH_NUM=0
+NNTPSERVER=news.freescale.net
+MG_LIB=/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8/project_settings/PLI/simulation_models/ModelManager/MMAPI_5.1.0/Linux/MM
+MANPATH_WITHOUT_PERLBREW=/site/lsf/8.0/9.1/man
+LSF_SERVERDIR=/site/lsf/8.0/9.1/linux2.6-glibc2.3-x86_64/etc
+LSF_LIBDIR=/site/lsf/8.0/9.1/linux2.6-glibc2.3-x86_64/lib
+LSF_ENVDIR=/site/lsf/8.0/conf
+LSF_BINDIR=/site/lsf/8.0/9.1/linux2.6-glibc2.3-x86_64/bin
+LSB_SUB_USER_GROUP=orion
+LSB_DEFAULTPROJECT=imx6sll_r1
+LM_PROJECT=imx6sll_r1
+LMC_HOME=/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8/project_settings/PLI/simulation_models/LMC_HOME
+LESSOPEN=|/usr/bin/lesspipe.sh %s
+KRB5CCNAME=FILE:/tmp/krb5cc_65019913_89906
+KONSOLE_DCOP_SESSION=DCOPRef(konsole-15843,session-3)
+KONSOLE_DCOP=DCOPRef(konsole-15843,konsole)
+KDE_MULTIHEAD=false
+KDE_IS_PRELINKED=1
+KDE_FULL_SESSION=true
+KDEDIR=/usr
+JAVA_HOME=/home/b51816/jdk1.8.0_65
+HUM_EOD_SSH_RAND_HELPER=/ssh-rand-helper
+HUMMINGBIRD_EOD=
+HOSTTYPE=x86_64-linux
+HOST=lvd5754
+G_BROKEN_FILENAMES=1
+GS_LIB=/home/b51816/.fonts
+GROUP=chinagp
+GEV_VERIF_ROOT=/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8/verif
+GEV_TOOLS_ROOT=/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8/verif/tools
+EODCOOKIE=e2cbb84f472d5b24fe072f524a195069
+DW_LICENSE_OVERRIDE=DesignWare-Regression
+DPDM_Version=1.0
+DPDM_Part_Number=i.MX6SLL_001
+DPDM_Part_Name=i.MX6SLL
+DPDM_Owning_Organization=Microcontrollers
+DPDM_Lifecycle_Phase=Preliminary
+DPDM_ECCN=5E002
+DPDM_Compatible_Technology_and_Processes=cln40|cln40lp-lo-1.1_2.5v_1P7M_5X0Y1Z0R0U
+DOMAIN=nidc.sps-india.mot.com
+DIR_CORTEXA9MPDSM=/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8/project_settings/PLI/simulation_models/DSM/cadence_nc_verilog_Linux/CORTEXA9MPDSM_unlicensed_r2p2-00rel0/CORTEXA9MPDSM
+DESIGN_DIR=/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8
+DESIGNWARE_HOME=/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8/vip/designware_models
+DENALI_LICENSE_QUEUE_TIMEOUT=120
+DENALI=/run/pkg/cadence-vipcat-/11.30.027/tools/denali
+CVS_RSH=ssh
+CTAGS=/home/b51816/ctag/ctags-5.8
+CSCOPE_DB=~/cscope_file/imx8dv_015.1.out
+CORTEXA9MPDSM_HOME=/proj/imx6sll/design/workarea/b51816/IMX6SLL_N2_0.8/project_settings/PLI/simulation_models/DSM/cadence_nc_verilog_Linux/CORTEXA9MPDSM_unlicensed_r2p2-00rel0
+COMPATIBLEPROCESSES=cln40|cln40lp-lo-1.1_2.5v_1P7M_5X0Y1Z0R0U
+COLORTERM=
+CLASSPATH=.:/home/b51816/jdk1.8.0_65/lib/tools.jar
+ARM_TOOL=/proj/ult1/arm_compiler/arm-2013.05/bin/arm-none-linux-gnueabi
+ARM_PRE=arm-none-linux-gnueabi-
+ARM_OBJDUMP=/proj/ult1/arm_compiler/arm-2013.05/bin/arm-none-linux-gnueabi-objdump
+ARM_OBJCOPY=/proj/ult1/arm_compiler/arm-2013.05/bin/arm-none-linux-gnueabi-objcopy
+ARM_LD=/proj/ult1/arm_compiler/arm-2013.05/bin/arm-none-linux-gnueabi-ld
+ARM_GCC=/proj/ult1/arm_compiler/arm-2013.05/bin/arm-none-linux-gnueabi-gcc
+ARM_DIR=/proj/ult1/arm_compiler/arm-2013.05/bin/
+ARM_AS=/proj/ult1/arm_compiler/arm-2013.05/bin/arm-none-linux-gnueabi-as
+ARCH_SUFFIX=L
+0
+149
+1462443308 /home/b51816/my_git/repository/jay_uvm/jay_test/base_test1.sv
+1462788047 /home/b51816/my_git/repository/jay_uvm/jay_test/base_test.sv
+1462434275 /home/b51816/my_git/repository/jay_uvm/jay_env/zmk_env.sv
+1462434275 /home/b51816/my_git/repository/jay_uvm/jay_scoreboard/zmk_scoreboard.sv
+1462434275 /home/b51816/my_git/repository/jay_uvm/jay_reference/zmk_ref_model.sv
+1462434275 /home/b51816/my_git/repository/jay_uvm/jay_agent/zmk_agent.sv
+1462434275 /home/b51816/my_git/repository/jay_uvm/jay_monitor/zmk_input_monitor.sv
+1462434275 /home/b51816/my_git/repository/jay_uvm/jay_sequencer/zmk_sequence_0.sv
+1462434275 /home/b51816/my_git/repository/jay_uvm/jay_sequencer/zmk_sequencer.sv
+1462434275 /home/b51816/my_git/repository/jay_uvm/jay_monitor/zmk_monitor.sv
+1462776779 /home/b51816/my_git/repository/jay_uvm/jay_driver/zmk_driver.sv
+1462434275 /home/b51816/my_git/repository/jay_uvm/jay_trans/zmk_transaction.sv
+1461565833 /home/b51816/my_git/repository/jay_uvm/jay_dut/snvs_params.vh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/sequences/uvm_reg_mem_hdl_paths_seq.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/sequences/uvm_reg_mem_built_in_seq.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/sequences/uvm_reg_mem_shared_access_seq.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/sequences/uvm_reg_access_seq.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/sequences/uvm_mem_access_seq.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/sequences/uvm_mem_walk_seq.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/sequences/uvm_reg_bit_bash_seq.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/sequences/uvm_reg_hw_reset_seq.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/uvm_reg_block.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/uvm_reg_map.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/uvm_mem.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/uvm_vreg.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/uvm_mem_mam.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/uvm_reg_file.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/uvm_reg_fifo.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/uvm_reg_indirect.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/uvm_reg.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/uvm_vreg_field.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/uvm_reg_field.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/uvm_reg_backdoor.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/uvm_reg_cbs.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/uvm_reg_sequence.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/uvm_reg_predictor.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/uvm_reg_adapter.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/uvm_reg_item.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/reg/uvm_reg_model.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm2/uvm_tlm2_sockets.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm2/uvm_tlm2_sockets_base.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm2/uvm_tlm2_exports.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm2/uvm_tlm2_ports.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm2/uvm_tlm2_imps.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm2/uvm_tlm2_ifs.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm2/uvm_tlm2_generic_payload.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm2/uvm_tlm2_time.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm2/uvm_tlm2_defines.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm2/uvm_tlm2.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/seq/uvm_sequence_builtin.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/seq/uvm_sequence_library.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/seq/uvm_sequence.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/seq/uvm_sequence_base.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/seq/uvm_push_sequencer.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/seq/uvm_sequencer.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/seq/uvm_sequencer_param_base.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/seq/uvm_sequencer_analysis_fifo.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/seq/uvm_sequencer_base.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/seq/uvm_sequence_item.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/seq/uvm_seq.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/comps/uvm_test.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/comps/uvm_env.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/comps/uvm_agent.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/comps/uvm_scoreboard.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/comps/uvm_push_driver.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/comps/uvm_driver.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/comps/uvm_monitor.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/comps/uvm_subscriber.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/comps/uvm_random_stimulus.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/comps/uvm_algorithmic_comparator.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/comps/uvm_in_order_comparator.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/comps/uvm_policies.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/comps/uvm_pair.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/comps/uvm_comps.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm1/uvm_sqr_connections.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm1/uvm_tlm_req_rsp.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm1/uvm_tlm_fifos.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm1/uvm_tlm_fifo_base.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm1/uvm_analysis_port.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm1/uvm_exports.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm1/uvm_ports.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm1/uvm_imps.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_port_base.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm1/uvm_sqr_ifs.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm1/uvm_tlm_ifs.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm1/uvm_tlm.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_cmdline_processor.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_globals.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_heartbeat.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_objection.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_root.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_component.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_runtime_phases.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_common_phases.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_task_phase.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_topdown_phase.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_bottomup_phase.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_domain.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_phase.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_transaction.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_report_object.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_report_handler.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_report_server.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_report_catcher.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_callback.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_barrier.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_event.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_event_callback.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_recorder.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_packer.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_comparer.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_printer.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_config_db.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_resource_db.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_resource_specializations.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/deprecated/uvm_resource_converter.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_resource.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_spell_chkr.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_registry.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_factory.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_queue.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_pool.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_object.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_misc.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_object_globals.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_version.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/base/uvm_base.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/dpi/uvm_regex.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/dpi/uvm_svcmd_dpi.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/dpi/uvm_hdl.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/dpi/uvm_dpi.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/macros/uvm_deprecated_defines.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/macros/uvm_reg_defines.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/macros/uvm_callback_defines.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/macros/uvm_sequence_defines.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/macros/uvm_tlm_defines.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/macros/uvm_printer_defines.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/macros/uvm_object_defines.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/macros/uvm_phase_defines.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/macros/uvm_message_defines.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/macros/uvm_version_defines.svh
+1362692630 /home/b51816/uvm/uvm-1.1d/src/uvm_macros.svh
+1462777560 /home/b51816/my_git/repository/jay_uvm/jay_top/top_tb.sv
+1462434275 /home/b51816/my_git/repository/jay_uvm/jay_if/zmk_if.sv
+1461565736 /home/b51816/my_git/repository/jay_uvm/jay_dut/snvs_lp_zmk.v
+1461565756 /home/b51816/my_git/repository/jay_uvm/jay_dut/snvs_lp_zmk_ff.v
+1362692630 /home/b51816/uvm/uvm-1.1d/src/uvm_pkg.sv
+1462434275 filelist.f
+5
+1362692630 /home/b51816/uvm/uvm-1.1d/src/dpi/uvm_dpi.cc
+0 
+1309234138 /run/pkg/synopsys-vcs-/E-2011.03-3/linux/lib/libvirsim.so
+1309233689 /run/pkg/synopsys-vcs-/E-2011.03-3/linux/lib/librterrorinf.so
+1309233651 /run/pkg/synopsys-vcs-/E-2011.03-3/linux/lib/libsnpsmalloc.so
+1462788072 simv.daidir
